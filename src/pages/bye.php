@@ -1,4 +1,1 @@
-<?php
-
-$response->setContent('Goodbye!');
-$response->send();
+Goodbye World
