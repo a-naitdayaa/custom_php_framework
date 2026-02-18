@@ -1,1 +1,0 @@
-The year <?= htmlspecialchars($year, ENT_QUOTES, 'UTF-8') ?> is <?= is_leap_year($year) ? 'a leap year' : 'not a leap year' ?>.
