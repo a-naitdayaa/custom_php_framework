@@ -8,16 +8,13 @@ use Calendar\Model\LeapYear;
 
 class LeapYearController
 {
-    public function index(Request $request, int $year): Response
+    public function index(int $year): string
     {
         $leapYear = new LeapYear();
         if ($leapYear->isLeapYear($year)) {
-            $response = new Response(sprintf('The year %d is a leap year.' . ' - ' . rand() . ' - ', $year));
+            return 'Yep, this is a leap year! ';
         }
-        $response = new Response(sprintf('The year %d is not a leap year.' . ' - ' . rand() . ' - ', $year));
 
-        //cache the response for 10 seconds
-        $response->setTtl(10);
-        return $response;
+        return 'Nope, this is not a leap year.';
     }
 }
