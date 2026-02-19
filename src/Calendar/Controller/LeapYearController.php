@@ -12,9 +12,9 @@ class LeapYearController
     {
         $leapYear = new LeapYear();
         if ($leapYear->isLeapYear($year)) {
-            $response = new Response(sprintf('The year %d is a leap year.', $year));
+            $response = new Response(sprintf('The year %d is a leap year.' . ' - ' . rand() . ' - ', $year));
         }
-        $response = new Response(sprintf('The year %d is not a leap year.', $year));
+        $response = new Response(sprintf('The year %d is not a leap year.' . ' - ' . rand() . ' - ', $year));
 
         //cache the response for 10 seconds
         $response->setTtl(10);
